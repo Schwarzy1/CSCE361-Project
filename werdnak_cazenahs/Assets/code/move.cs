@@ -5,7 +5,7 @@ using System.Collections;
 
 public class move : MonoBehaviour {
 
-	// Use this for initialization
+	// Use this for starting stuff
 	void Start () {		//This is the start
 	
 	}
