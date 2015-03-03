@@ -10,6 +10,6 @@ public class move : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		//this is where the data for the game is updated for every frame
 	}
 }
