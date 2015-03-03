@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿
+
+using UnityEngine;
 using System.Collections;
 
 public class move : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Start () {		//This is the start
 	
 	}
 	
