@@ -5,7 +5,7 @@ using System.Collections;
 
 public class move : MonoBehaviour {
 
-	// Use this for testing github interactions
+	// Use this for initialization
 	void Start () {		//This is the start
 	
 	}
