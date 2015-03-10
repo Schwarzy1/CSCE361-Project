@@ -1,9 +1,18 @@
 fileFormatVersion: 2
 guid: 3eccac2c0c5777e41957c424cd8d9343
-timeCreated: 1425936708
+timeCreated: 1426012289
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: werdnak_0
+    21300002: werdnak_1
+    21300004: werdnak_2
+    21300006: werdnak_3
+    21300008: werdnak_4
+    21300010: werdnak_5
+    21300012: werdnak_6
+    21300014: werdnak_7
+    21300016: werdnak_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,14 +39,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +57,97 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: werdnak_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 113
+        width: 99
+        height: 16
+      alignment: 9
+      pivot: {x: .894345582, y: .290856361}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: werdnak_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 85
+        height: 77
+      alignment: 9
+      pivot: {x: .526245475, y: .4275693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: werdnak_2
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 54
+        width: 20
+        height: 55
+      alignment: 9
+      pivot: {x: .430285633, y: .0842472389}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: werdnak_3
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 34
+        width: 11
+        height: 21
+      alignment: 9
+      pivot: {x: .423948109, y: .792137861}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: werdnak_4
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 31
+        width: 28
+        height: 21
+      alignment: 9
+      pivot: {x: .231100634, y: .553116024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: werdnak_5
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 83
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: werdnak_6
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 21
+        width: 19
+        height: 6
+      alignment: 9
+      pivot: {x: .23581776, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: werdnak_7
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 6
+        width: 15
+        height: 21
+      alignment: 9
+      pivot: {x: .592952967, y: .792137504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: werdnak_8
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 12
+        width: 19
+        height: 7
+      alignment: 9
+      pivot: {x: .221140817, y: .539836228}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
