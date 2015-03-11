@@ -9,7 +9,7 @@ public class werdnakMove : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		
 		if(Input.GetKey(KeyCode.W)){
 			transform.Translate(0,speed,0);
