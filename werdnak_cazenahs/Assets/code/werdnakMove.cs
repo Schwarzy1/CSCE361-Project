@@ -31,5 +31,9 @@ public class werdnakMove : MonoBehaviour {
 			transform.localScale = (new Vector3(1,1,1));
 			animator.SetFloat("Speed", 1);
 		}
+		animator.SetBool("Attacking", false);
+		if(Input.GetKeyDown(KeyCode.Space)){
+			animator.SetBool("Attacking", true);
+		}
 	}
 }
