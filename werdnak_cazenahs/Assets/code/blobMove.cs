@@ -10,12 +10,12 @@ public class blobMove : MonoBehaviour {
 	int i;
 	float STARTX;
 	float STARTY;
-	//Animator animator;
+	Animator animator;
 	// Use this for initialization
 	public void Start () {
 		STARTX = transform.position.x;
 		STARTY = transform.position.y;
-		//animator = GetComponent<Animator>();
+		animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -30,24 +30,24 @@ public class blobMove : MonoBehaviour {
 			s = Random.value * 100;
 		}
 
-		//animator.SetFloat("Speed", 0);
-		if(r <= .25 && y < STARTY + 1){
+		animator.SetFloat("Speed", 0);
+		if(r > .20 && r < .4 && y < STARTY + 1){
 			transform.Translate(0,speed,0);
-			//animator.SetFloat("Speed", 1);
+			animator.SetFloat("Speed", 1);
 		}
-		if(r > .25 && r < .5 && y > STARTY - 1){
+		if(r >= .4 && r < .6 && y > STARTY - 1){
 			transform.Translate(0,(-1)*speed,0);
-			//animator.SetFloat("Speed", 1);
+			animator.SetFloat("Speed", 1);
 		}
-		if(r >= .5 && r < .75 && x > STARTX - 1){
-			transform.localScale = (new Vector3(-1,1,1));
-			transform.Translate((-1)*speed,0,0);
-			//animator.SetFloat("Speed", 1);
-		}
-		if(r >= .75 && x < STARTX + 1){
+		if(r >= .6 && r < .8 && x > STARTX - 1){
 			transform.localScale = (new Vector3(1,1,1));
+			transform.Translate((-1)*speed,0,0);
+			animator.SetFloat("Speed", 1);
+		}
+		if(r >= .8 && x < STARTX + 1){
+			transform.localScale = (new Vector3(-1,1,1));
 			transform.Translate(speed,0,0);
-			//animator.SetFloat("Speed", 1);
+			animator.SetFloat("Speed", 1);
 		}
 
 		s--;

@@ -42,7 +42,7 @@ public class werdnakMove : MonoBehaviour {
 	}
 
 	void jumpAttack(){
-		if(Input.GetKeyDown(KeyCode.Space)){
+		if(Input.GetKeyDown(KeyCode.Space) && attacking == false){
 			speed = .12f;
 			Physics2D.IgnoreLayerCollision(8,9,true);
 			attacking = true;
