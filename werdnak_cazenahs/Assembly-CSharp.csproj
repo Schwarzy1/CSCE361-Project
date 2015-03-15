@@ -46,9 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\code\CharSelectMangerScript.cs" />
      <Compile Include="Assets\code\UIManagerScript.cs" />
+     <Compile Include="Assets\code\blobMove.cs" />
+     <Compile Include="Assets\code\cameraHandler.cs" />
      <Compile Include="Assets\code\cazenahsMove.cs" />
+     <Compile Include="Assets\code\doorHandler.cs" />
      <Compile Include="Assets\code\move.cs" />
+     <Compile Include="Assets\code\roomHandler.cs" />
      <Compile Include="Assets\code\werdnakMove.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

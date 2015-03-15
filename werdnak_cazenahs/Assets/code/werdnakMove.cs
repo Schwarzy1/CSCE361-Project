@@ -12,8 +12,8 @@ public class werdnakMove : MonoBehaviour {
 	void Start () {
 		animator = GetComponent<Animator>();
 		//alows sword to pass through objects marked as wall and pit
-		Physics2D.IgnoreLayerCollision(10,9,true);
-		Physics2D.IgnoreLayerCollision(10,12,true);
+		//Physics2D.IgnoreLayerCollision(10,9,true);
+		//Physics2D.IgnoreLayerCollision(10,12,true);
 	}
 
 	void FixedUpdate () {
