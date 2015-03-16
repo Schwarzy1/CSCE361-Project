@@ -15,7 +15,10 @@ public class damageHandler : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.name.Equals ("Caz") || other.gameObject.name.Equals ("Werd")) {
+		if (other.gameObject.name.Equals ("Caz") ){
+			hh.TakeDamage(damage);
+		}
+		if(other.gameObject.name.Equals ("Werd") && other.gameObject.GetComponent<werdnakMove>().attacking == false) {
 			hh.TakeDamage(damage);
 		}
 	}
