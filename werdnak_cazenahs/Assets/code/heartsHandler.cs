@@ -12,9 +12,7 @@ public class heartsHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.X)){
-			TakeDamage(1);
-		}
+
 	}
 
 	public void TakeDamage(int damage){
