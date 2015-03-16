@@ -70,12 +70,12 @@ public class meleeRobotMove : MonoBehaviour {
 				transform.Translate(0,(-1)*speed,0);
 				//animator.SetFloat("Speed", 1);
 			}
-			if(werdPosX > posX){
+			if(werdPosX < posX){
 				transform.localScale = (new Vector3(1,1,1));
 				transform.Translate((-1)*speed,0,0);
 				//animator.SetFloat("Speed", 1);
 			}
-			if(werdPosX < posX){
+			if(werdPosX > posX){
 				transform.localScale = (new Vector3(-1,1,1));
 				transform.Translate(speed,0,0);
 				//animator.SetFloat("Speed", 1);
