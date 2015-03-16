@@ -4,6 +4,9 @@ using System.Collections;
 public class cazenahsMove : MonoBehaviour {
 	float speed = .1f;
 	Animator animator;
+	GameObject lazer;
+	Vector3 loc;
+	Quaternion quat = new Quaternion(0,0,0,0);
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
@@ -32,5 +35,14 @@ public class cazenahsMove : MonoBehaviour {
 			animator.SetFloat("Speed", 1);
 		}
 		//GetComponent<Rigidbody2D> ().velocity = new Vector3 (1, 1, 1);
+
+		if (Input.GetKeyDown (KeyCode.RightControl)) {
+
+			loc = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+			lazer = GameObject.Find("lazer_blue");
+			Instantiate(lazer, loc , quat);
+		}
+
 	}
+
 }
