@@ -12,8 +12,10 @@ public class meleeRobotMove : MonoBehaviour {
 	float y;
 	float cazPosX;
 	float cazPosY;
+	float cazDist;
 	float werdPosX;
 	float werdPosY;
+	float werdDist;
 	float posX;
 	float posY;
 	float STARTX;
@@ -37,11 +39,15 @@ public class meleeRobotMove : MonoBehaviour {
 		y = transform.position.y;
 		cazPosX = caz.transform.position.x;
 		cazPosY = caz.transform.position.y;
+		cazDist = cazPosX * cazPosY;
 		werdPosX = werd.transform.position.x;
 		werdPosY = werd.transform.position.y;
+		werdDist = werdPosX * werdPosY;
 		posX = transform.position.x;
 		posY = transform.position.y;
-		if (cazPosX < STARTX + radius && cazPosX > STARTX - radius && cazPosY < STARTY + radius && cazPosY > STARTY - radius) {
+
+
+		if (cazPosX < STARTX + radius && cazPosX > STARTX - radius && cazPosY < STARTY + radius && cazPosY > STARTY - radius && cazDist < werdDist) {
 			if(cazPosY > posY){
 				transform.Translate(0,speed,0);
 				//animator.SetFloat("Speed", 1);
@@ -61,7 +67,7 @@ public class meleeRobotMove : MonoBehaviour {
 				//animator.SetFloat("Speed", 1);
 			}
 		}
-		if (werdPosX < STARTX + radius && werdPosX > STARTX - radius && werdPosY < STARTY + radius && werdPosY > STARTY - radius) {
+		if (werdPosX < STARTX + radius && werdPosX > STARTX - radius && werdPosY < STARTY + radius && werdPosY > STARTY - radius && cazDist > werdDist) {
 			if(werdPosY > posY){
 				transform.Translate(0,speed,0);
 				//animator.SetFloat("Speed", 1);
