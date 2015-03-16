@@ -53,6 +53,7 @@
      <Compile Include="Assets\code\cazenahsMove.cs" />
      <Compile Include="Assets\code\damageHandler.cs" />
      <Compile Include="Assets\code\doorHandler.cs" />
+     <Compile Include="Assets\code\enemyHeathHandler.cs" />
      <Compile Include="Assets\code\heartsHandler.cs" />
      <Compile Include="Assets\code\meleeRobotMove.cs" />
      <Compile Include="Assets\code\move.cs" />
