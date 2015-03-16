@@ -23,6 +23,7 @@ public class heartsHandler : MonoBehaviour {
 			health = 6;
 		}else if(health <= 0){
 			health = 0;
+			Application.LoadLevel ("GameOver");
 		}
 		animator.SetInteger("health", health);
 	}

@@ -28,6 +28,7 @@ public class UIManagerScript : MonoBehaviour {
 		Application.LoadLevel ("Credits");
 		lastLevel = "Credits";
 	}
+
 	public void LevelSelect(){
 		Application.LoadLevel ("LevelSelect");
 		lastLevel= "LevelSelect";
@@ -50,6 +51,10 @@ public class UIManagerScript : MonoBehaviour {
 
 		StartGame ("scene_one");
 
+	}
+	public void GameOver(){
+		Application.LoadLevel ("GameOver");
+		lastLevel = "GameOver";
 	}
 
 }

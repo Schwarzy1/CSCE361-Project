@@ -51,7 +51,10 @@
      <Compile Include="Assets\code\blobMove.cs" />
      <Compile Include="Assets\code\cameraHandler.cs" />
      <Compile Include="Assets\code\cazenahsMove.cs" />
+     <Compile Include="Assets\code\damageHandler.cs" />
      <Compile Include="Assets\code\doorHandler.cs" />
+     <Compile Include="Assets\code\heartsHandler.cs" />
+     <Compile Include="Assets\code\meleeRobotMove.cs" />
      <Compile Include="Assets\code\move.cs" />
      <Compile Include="Assets\code\roomHandler.cs" />
      <Compile Include="Assets\code\werdnakMove.cs" />
