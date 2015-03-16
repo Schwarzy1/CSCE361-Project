@@ -7,10 +7,11 @@ public class roomHandler : MonoBehaviour {
 	float currentRoomY;
 	GameObject caz;
 	GameObject werd;
-	public cameraHandler camHand;
+	cameraHandler camHand;
 	float z = -3;
 	// Use this for initialization
 	void Start () {
+		camHand = GameObject.Find("Main Camera").GetComponent<cameraHandler>();
 		currentRoomX = 0;
 		currentRoomY = 0;
 		caz = GameObject.Find ("Caz");

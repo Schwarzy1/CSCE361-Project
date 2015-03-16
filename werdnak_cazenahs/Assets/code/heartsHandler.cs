@@ -17,7 +17,7 @@ public class heartsHandler : MonoBehaviour {
 		}
 	}
 
-	void TakeDamage(int damage){
+	public void TakeDamage(int damage){
 		health -= damage;
 		if(health >= 6){
 			health = 6;

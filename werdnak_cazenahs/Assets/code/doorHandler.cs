@@ -4,9 +4,10 @@ using System.Collections;
 public class doorHandler : MonoBehaviour {
 	public int doorSide;
 	bool open = true;
-	public roomHandler roomHand;
+	roomHandler roomHand;
 	// Use this for initialization
 	void Start () {
+		roomHand = GameObject.Find("roomHandler").GetComponent<roomHandler>();
 		doorSide = (int) transform.eulerAngles.z;
 	}
 
