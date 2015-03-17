@@ -17,7 +17,7 @@ public class enemyHeathHandler : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.name.Equals("Werd") && other.gameObject.GetComponent<werdnakMove>().attacking == true){
 			health -= 2;
-		}else if (other.gameObject.tag.Equals("cazBullet")){
+		}else if (other.gameObject.tag.Equals("cazLazer")){
 			health -= 1;
 		}
 		if(health <= 0){

@@ -14,6 +14,11 @@ public class cazenahsMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		/*
+		loc = new Vector3(-100,-100, -1);
+		lazer = GameObject.FindGameObjectWithTag("cazLazer");
+		Instantiate(lazer, loc , quat);
+		*/
 		
 		animator.SetFloat("Speed", 0);
 		if(Input.GetKey(KeyCode.UpArrow)){
@@ -37,11 +42,13 @@ public class cazenahsMove : MonoBehaviour {
 		//GetComponent<Rigidbody2D> ().velocity = new Vector3 (1, 1, 1);
 
 		if (Input.GetKeyDown (KeyCode.RightControl)) {
-
-			loc = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-			lazer = GameObject.Find("lazer_blue");
+			loc = new Vector3(transform.position.x + (transform.localScale.x * .1f), transform.position.y -.15f, transform.position.z);
+			lazer = GameObject.FindGameObjectWithTag("cazLazer");
 			Instantiate(lazer, loc , quat);
+
+
 		}
+
 
 	}
 
