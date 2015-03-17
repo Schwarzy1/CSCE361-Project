@@ -26,6 +26,10 @@ public class enemyHeathHandler : MonoBehaviour {
 		if(health <= 0){
 			Destroy(gameObject);
 			if(isBoss){
+				int wait=1000;
+				while(wait>0){
+					wait--;
+				}
 				Application.LoadLevel("LevelOneComplete");
 			}
 		}

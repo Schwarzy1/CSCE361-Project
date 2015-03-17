@@ -21,6 +21,9 @@ public class cazenahsMove : MonoBehaviour {
 			Move ();
 			Attack();
 		}
+		if(Input.GetKey(KeyCode.U)){
+			powerUp=true;
+		}
 		//GetComponent<Rigidbody2D> ().velocity = new Vector3 (1, 1, 1);
 
 	}

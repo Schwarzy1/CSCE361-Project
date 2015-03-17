@@ -10,13 +10,28 @@ public class blobMove : MonoBehaviour {
 	float radius = 1;
 	float STARTX;
 	float STARTY;
+	bool isOne=false;
+	 public doorHandler doorhand;
 	Animator animator;
 	// Use this for initialization
 	public void Start () {
 		STARTX = transform.position.x;
 		STARTY = transform.position.y;
 		animator = GetComponent<Animator>();
+		if(this.name==("blob 1")){
+			this.
+			isOne=true;
+		}
+
 	}
+		public void OnDestroy(){
+	
+		if (isOne) {
+			doorhand.OpenDoor ();
+
+		}
+	}
+	
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -52,7 +67,9 @@ public class blobMove : MonoBehaviour {
 
 		s--;
 		//GetComponent<Rigidbody2D> ().velocity = new Vector3 (1, 1, 1);
+
 	}
+
 	
 
 }

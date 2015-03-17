@@ -5,7 +5,7 @@ public class werdnakMove : MonoBehaviour {
 	float speed = .08f;
 	Animator animator;
 	int direction = 0;
-	public bool powerup = true;
+	public bool powerup = false;
 	public bool lockMove = false;
 	public bool attacking = false;
 	public int attackCoolDown = 0;
@@ -25,6 +25,9 @@ public class werdnakMove : MonoBehaviour {
 				basicAttack ();
 				move ();
 			}
+		}
+		if (Input.GetKey (KeyCode.I)) {
+			powerup = true;
 		}
 	}
 
