@@ -21,7 +21,7 @@ public class doorHandler : MonoBehaviour {
 		if(other.gameObject.name == "Caz" || other.gameObject.name == "Werd"){
 			if (isBossDoor == true && keyUI.activeSelf == true && open == false) {
 				OpenDoor();
-				keyUI.SetActive(false);
+				keyUI.transform.position = new Vector3(100,100,100);
 			}
 			if (open == true) {
 				if(doorSide == 0){

@@ -15,6 +15,7 @@ public class lazerMove : MonoBehaviour {
 		Physics2D.IgnoreLayerCollision(13,11,true);
 		Physics2D.IgnoreLayerCollision(13,13,true);
 		Physics2D.IgnoreLayerCollision(13,14,true);
+		Physics2D.IgnoreLayerCollision(13,15,true);
 		caz = GameObject.Find ("Caz");
 		direction = caz.GetComponent<cazenahsMove> ().transform.localScale.x;
 		if (caz.GetComponent<cazenahsMove> ().powerUp == true) {
