@@ -23,6 +23,7 @@ public class lazerMove : MonoBehaviour {
 	void Update () {
 		transform.Translate (cazY * speed, 0, 0);
 		if (i > dist) {
+			i = 0;
 			loc = new Vector3(-100,-100, -1);
 			lazer = GameObject.FindGameObjectWithTag("cazLazer");
 			Instantiate(lazer, loc , quat);
