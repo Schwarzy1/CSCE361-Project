@@ -57,4 +57,8 @@ public class UIManagerScript : MonoBehaviour {
 		lastLevel = "GameOver";
 	}
 
+	public void LevelTwo(){
+		Application.LoadLevel ("scene_two");
+	}
+
 }
