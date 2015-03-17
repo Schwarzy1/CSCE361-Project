@@ -19,7 +19,7 @@ public class doorHandler : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.gameObject.name == "Caz" || other.gameObject.name == "Werd"){
-			if (isBossDoor == true && keyUI.activeSelf == true && open == false) {
+			if (isBossDoor == true && keyUI.transform.position.x == 5 && open == false) {
 				OpenDoor();
 				keyUI.transform.position = new Vector3(100,100,100);
 			}

@@ -10,7 +10,7 @@ public class keyHandler : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-		if(keyUI.transform.position.x == 100 && keyUI.transform.position.y == 100 && keyUI.transform.position.z == 100){
+		if(keyUI.transform.position.x == 100){
 			keyUI.transform.position = new Vector3(5,-3.2f,-1);
 			Destroy (gameObject);
 		}
