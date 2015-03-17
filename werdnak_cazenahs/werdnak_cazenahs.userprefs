@@ -1,14 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\code\doorHandler.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\code\enemyLazerMove.cs">
     <Files>
-      <File FileName="Assets\code\lazerMove.cs" Line="18" Column="46" />
-      <File FileName="Assets\code\cazenahsMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\code\keyHandler.cs" Line="14" Column="55" />
-      <File FileName="Assets\code\enemyHeathHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets\code\doorHandler.cs" Line="27" Column="23" />
-      <File FileName="Assets\code\cameraHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets\code\werdnakMove.cs" Line="1" Column="1" />
+      <File FileName="Assets\code\archeryRobotAttack.cs" Line="41" Column="42" />
+      <File FileName="Assets\code\enemyLazerMove.cs" Line="16" Column="46" />
+      <File FileName="Assets\code\cazenahsMove.cs" Line="50" Column="40" />
+      <File FileName="Assets\code\lazerMove.cs" Line="17" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
