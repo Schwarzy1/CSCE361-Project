@@ -6,6 +6,7 @@ public class werdnakMove : MonoBehaviour {
 	Animator animator;
 	int direction = 0;
 	public bool powerup = true;
+	public bool lockMove = false;
 	public bool attacking = false;
 	public int attackCoolDown = 0;
 	// Use this for initialization
@@ -17,11 +18,13 @@ public class werdnakMove : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		if (powerup == true) {
-			jumpAttack ();
-		} else {
-			basicAttack();
-			move();
+		if (lockMove == false) {
+			if (powerup == true) {
+				jumpAttack ();
+			} else {
+				basicAttack ();
+				move ();
+			}
 		}
 	}
 

@@ -14,6 +14,8 @@ public class cameraHandler : MonoBehaviour {
 	bool moving = false;
 	Vector3 targetPos;
 	Vector3 currentPos;
+	GameObject Caz;
+	GameObject Werd;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +23,8 @@ public class cameraHandler : MonoBehaviour {
 		y = transform.position.y;
 		currentPos = new Vector3 (x, y, z);
 		targetPos = new Vector3 (x, y, z);
+		Caz = GameObject.Find("Caz");
+		Werd = GameObject.Find("Werd");
 	}
 	
 	// Update is called once per frame
@@ -33,6 +37,8 @@ public class cameraHandler : MonoBehaviour {
 		}
 		if (t >= 1.2f) {
 			moving = false;
+			Caz.GetComponent<cazenahsMove> ().lockMove = false;
+			Werd.GetComponent<werdnakMove> ().lockMove = false;
 			currentPos = new Vector3(targetPos.x,targetPos.y,z);
 			t = 0f;
 		}
@@ -41,17 +47,25 @@ public class cameraHandler : MonoBehaviour {
 	public void MoveUp(){
 		targetPos = new Vector3 (x,y+up,z);
 		moving = true;
+		Caz.GetComponent<cazenahsMove> ().lockMove = true;
+		Werd.GetComponent<werdnakMove> ().lockMove = true;
 	}
 	public void MoveDown(){
 		targetPos = new Vector3 (x,y+down,z);
 		moving = true;
+		Caz.GetComponent<cazenahsMove> ().lockMove = true;
+		Werd.GetComponent<werdnakMove> ().lockMove = true;
 	}
 	public void MoveLeft(){
 		targetPos = new Vector3 (x+left,y,z);
 		moving = true;
+		Caz.GetComponent<cazenahsMove> ().lockMove = true;
+		Werd.GetComponent<werdnakMove> ().lockMove = true;
 	}
 	public void MoveRight(){
 		targetPos = new Vector3 (x+right,y,z);
 		moving = true;
+		Caz.GetComponent<cazenahsMove> ().lockMove = true;
+		Werd.GetComponent<werdnakMove> ().lockMove = true;
 	}
 }
