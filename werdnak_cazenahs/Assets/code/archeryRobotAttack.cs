@@ -21,44 +21,31 @@ public class archeryRobotAttack : MonoBehaviour {
 	void Start () {
 		caz = GameObject.Find ("Caz");
 		werd = GameObject.Find ("Werd");
-		posX = transform.position.x;
-		posY = transform.position.y;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		posX = transform.position.x;
+		posY = transform.position.y;
 		cazPosX = caz.transform.position.x;
 		cazPosY = caz.transform.position.y;
-		cazDist = cazPosX * cazPosY;
+		cazDist = Vector3.Distance (transform.position, caz.transform.position);
 		werdPosX = werd.transform.position.x;
 		werdPosY = werd.transform.position.y;
-		werdDist = werdPosX * werdPosY;
+		werdDist = Vector3.Distance (transform.position, werd.transform.position);
 
-		if (cazPosX < posX + radius && cazPosX > posX - radius && cazPosY < posY + radius && cazPosY > posY - radius && cazDist < werdDist) {
+		if ((cazPosX < posX + radius && cazPosX > posX - radius && cazPosY < posY + radius && cazPosY > posY - radius && cazDist < werdDist)
+		    || (werdPosX < posX + radius && werdPosX > posX - radius && werdPosY < posY + radius && werdPosY > posY - radius && cazDist > werdDist)
+		    ) {
 			if (coolDownWait <= 0) {
 				loc = new Vector3(transform.position.x+1, transform.position.y-0.1f, transform.position.z);
 				lazer = GameObject.Find("lazer_green");
 				Instantiate(lazer, loc , quat);
 				coolDownWait = 30;
 			}
-
 			if (coolDownWait > 0) {
 				coolDownWait--;
 			}
-
-		}
-		if (werdPosX < posX + radius && werdPosX > posX - radius && werdPosY < posY + radius && werdPosY > posY - radius && cazDist > werdDist) {
-			if (coolDownWait <= 0) {
-				loc = new Vector3(transform.position.x+1, transform.position.y-0.1f, transform.position.z);
-				lazer = GameObject.Find("lazer_green");
-				Instantiate(lazer, loc , quat);
-				coolDownWait = 30;
-			}
-
-			if (coolDownWait > 0) {
-				coolDownWait--;
-			}
-
 		}
 		/*
 		if (coolDownWait <= 0) {

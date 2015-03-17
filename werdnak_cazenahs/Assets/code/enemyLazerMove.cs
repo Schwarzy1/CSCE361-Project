@@ -15,7 +15,7 @@ public class enemyLazerMove : MonoBehaviour {
 		Physics2D.IgnoreLayerCollision(13,11,true);
 		Physics2D.IgnoreLayerCollision(13,13,true);
 		Physics2D.IgnoreLayerCollision(13,14,true);
-		robot = GameObject.Find ("archeryRobot");
+		robot = GameObject.Find ("arecheryRobot");
 		direction = 1f;
 		distance = 3.2f;
 	}
