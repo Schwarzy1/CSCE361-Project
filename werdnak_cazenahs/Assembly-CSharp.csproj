@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\code\CharSelectMangerScript.cs" />
      <Compile Include="Assets\code\UIManagerScript.cs" />
+     <Compile Include="Assets\code\archeryRobotAttack.cs" />
      <Compile Include="Assets\code\blobMove.cs" />
      <Compile Include="Assets\code\buttonController.cs" />
      <Compile Include="Assets\code\cameraHandler.cs" />
@@ -55,6 +56,7 @@
      <Compile Include="Assets\code\damageHandler.cs" />
      <Compile Include="Assets\code\doorHandler.cs" />
      <Compile Include="Assets\code\enemyHeathHandler.cs" />
+     <Compile Include="Assets\code\enemyLazerMove.cs" />
      <Compile Include="Assets\code\heartsHandler.cs" />
      <Compile Include="Assets\code\keyHandler.cs" />
      <Compile Include="Assets\code\lazerMove.cs" />
