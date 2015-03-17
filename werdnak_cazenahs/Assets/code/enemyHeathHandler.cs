@@ -4,6 +4,7 @@ using System.Collections;
 public class enemyHeathHandler : MonoBehaviour {
 
 	public int health = 3;
+	public bool isBoss=false;
 	// Use this for initialization
 	void Start () {
 	
@@ -24,6 +25,9 @@ public class enemyHeathHandler : MonoBehaviour {
 		health -= damage;
 		if(health <= 0){
 			Destroy(gameObject);
+			if(isBoss){
+				Application.LoadLevel("LevelOneComplete");
+			}
 		}
 	}
 
