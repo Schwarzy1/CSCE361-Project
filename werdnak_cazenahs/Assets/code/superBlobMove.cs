@@ -34,10 +34,10 @@ public class superBlobMove : MonoBehaviour {
 		y = transform.position.y;
 		cazPosX = caz.transform.position.x;
 		cazPosY = caz.transform.position.y;
-		cazDist = cazPosX * cazPosY;
+		cazDist = Vector3.Distance (transform.position, caz.transform.position);
 		werdPosX = werd.transform.position.x;
 		werdPosY = werd.transform.position.y;
-		werdDist = werdPosX * werdPosY;
+		werdDist = Vector3.Distance (transform.position, werd.transform.position);
 		posX = transform.position.x;
 		posY = transform.position.y;
 		
