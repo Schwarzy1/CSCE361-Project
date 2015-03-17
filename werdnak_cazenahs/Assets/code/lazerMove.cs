@@ -5,6 +5,7 @@ public class lazerMove : MonoBehaviour {
 
 	float direction;
 	GameObject caz;
+	float distance;
 	// Use this for initialization
 	void Start () {
 		Physics2D.IgnoreLayerCollision(13,1,true);
@@ -16,6 +17,11 @@ public class lazerMove : MonoBehaviour {
 		Physics2D.IgnoreLayerCollision(13,14,true);
 		caz = GameObject.Find ("Caz");
 		direction = caz.GetComponent<cazenahsMove> ().transform.localScale.x;
+		if (caz.GetComponent<cazenahsMove> ().powerUp == true) {
+			distance = 6.4f;
+		} else {
+			distance = 3.2f;
+		}
 	}
 	
 	// Update is called once per frame
@@ -25,7 +31,7 @@ public class lazerMove : MonoBehaviour {
 		} else if (direction == 1f) {
 			transform.Translate (0.1f, 0, 0);
 		} 
-		if (Vector3.Distance (transform.position, caz.transform.position) >= 3.2f && Vector3.Distance (transform.position, caz.transform.position) < 20) {
+		if (Vector3.Distance (transform.position, caz.transform.position) >= distance && Vector3.Distance (transform.position, caz.transform.position) < 20) {
 			Destroy(gameObject);
 		}
 	}

@@ -5,6 +5,8 @@ public class cazenahsMove : MonoBehaviour {
 	float speed = .1f;
 	Animator animator;
 	public bool lockMove = false;
+	public int coolDownWait = 0;
+	public bool powerUp = false;
 	GameObject lazer;
 	Vector3 loc;
 	Quaternion quat = new Quaternion(0,0,0,0);
@@ -24,10 +26,13 @@ public class cazenahsMove : MonoBehaviour {
 	}
 
 	void Attack(){
-		if (Input.GetKeyDown (KeyCode.RightControl)) {
+		if (Input.GetKey (KeyCode.RightControl) && coolDownWait <= 0) {
 			loc = new Vector3(transform.position.x, transform.position.y-0.1f, transform.position.z);
 			lazer = GameObject.Find("lazer_blue");
 			Instantiate(lazer, loc , quat);
+			coolDownWait = 30;
+		}if (coolDownWait > 0) {
+			coolDownWait--;
 		}
 	}
 
