@@ -29,7 +29,7 @@ public class enemyLazerMove : MonoBehaviour {
 		} else if (direction == -1f) {
 			transform.Translate (0.1f, 0, 0);
 		} 
-		if (gameObject!=null&& Vector3.Distance ( transform.position, robot.transform.position) >= distance && Vector3.Distance (transform.position, robot.transform.position) < 20) {
+		if (robot!=null&& Vector3.Distance ( transform.position, robot.transform.position) >= distance && Vector3.Distance (transform.position, robot.transform.position) < 20) {
 			Destroy(gameObject);
 		}
 	}
