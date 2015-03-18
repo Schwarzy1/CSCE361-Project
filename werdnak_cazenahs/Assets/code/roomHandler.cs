@@ -40,26 +40,26 @@ public class roomHandler : MonoBehaviour {
 	
 	public void MoveUp(){
 		currentRoomY += 7.2f;
-		caz.transform.position = new Vector3 (currentRoomX+1, currentRoomY-2.5f, z);
-		werd.transform.position = new Vector3 (currentRoomX-1, currentRoomY-2.5f, z);
+		caz.transform.position = new Vector3 (currentRoomX+1, currentRoomY-2, z);
+		werd.transform.position = new Vector3 (currentRoomX-1, currentRoomY-2, z);
 		camHand.MoveUp ();
 	}
 	public void MoveDown(){
 		currentRoomY -= 7.2f;
-		caz.transform.position = new Vector3 (currentRoomX+1, currentRoomY+2.5f, z);
-		werd.transform.position = new Vector3 (currentRoomX-1, currentRoomY+2.5f, z);
+		caz.transform.position = new Vector3 (currentRoomX+1, currentRoomY+2, z);
+		werd.transform.position = new Vector3 (currentRoomX-1, currentRoomY+2, z);
 		camHand.MoveDown ();
 	}
 	public void MoveLeft(){
 		currentRoomX += 12.8f;
-		caz.transform.position = new Vector3 (currentRoomX-5, currentRoomY+1, z);
-		werd.transform.position = new Vector3 (currentRoomX-5, currentRoomY-1, z);
+		caz.transform.position = new Vector3 (currentRoomX-4.5f, currentRoomY+1, z);
+		werd.transform.position = new Vector3 (currentRoomX-4.5f, currentRoomY-1, z);
 		camHand.MoveLeft ();
 	}
 	public void MoveRight(){
 		currentRoomX -= 12.8f;
-		caz.transform.position = new Vector3 (currentRoomX+5, currentRoomY+1, z);
-		werd.transform.position = new Vector3 (currentRoomX+5, currentRoomY-1, z);
+		caz.transform.position = new Vector3 (currentRoomX+4.5f, currentRoomY+1, z);
+		werd.transform.position = new Vector3 (currentRoomX+4.5f, currentRoomY-1, z);
 		camHand.MoveRight ();
 	}
 
