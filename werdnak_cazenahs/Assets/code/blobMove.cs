@@ -11,6 +11,7 @@ public class blobMove : MonoBehaviour {
 	float STARTX;
 	float STARTY;
 	bool isOne=false;
+	bool isTwo=false;
 	 public doorHandler doorhand;
 	Animator animator;
 	// Use this for initialization
@@ -22,6 +23,10 @@ public class blobMove : MonoBehaviour {
 			this.
 			isOne=true;
 		}
+		if(this.name==("blob")){
+			this.
+				isTwo=true;
+		}
 
 	}
 		public void OnDestroy(){
@@ -29,6 +34,9 @@ public class blobMove : MonoBehaviour {
 		if (isOne) {
 			doorhand.OpenDoor ();
 
+		}
+		if (isTwo) {
+			doorhand.OpenDoor ();
 		}
 	}
 	
