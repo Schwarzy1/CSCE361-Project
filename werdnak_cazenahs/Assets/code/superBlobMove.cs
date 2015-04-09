@@ -28,7 +28,7 @@ public class superBlobMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (!UIManagerScript.paused) {
+		if (!PauseUIManager.paused) {
 			transform.localScale.Set (2.5f, 2.5f, 1);
 			animator.transform.localScale.Set (2.5f, 2.5f, 1);
 			x = transform.position.x;

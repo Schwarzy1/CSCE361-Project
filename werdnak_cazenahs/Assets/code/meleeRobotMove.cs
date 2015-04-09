@@ -35,7 +35,7 @@ public class meleeRobotMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (!UIManagerScript.paused) {
+		if (!PauseUIManager.paused) {
 			x = transform.position.x;
 			y = transform.position.y;
 			cazPosX = caz.transform.position.x;

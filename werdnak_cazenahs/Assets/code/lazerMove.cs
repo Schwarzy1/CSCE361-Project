@@ -27,7 +27,7 @@ public class lazerMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!UIManagerScript.paused) {
+		if (!PauseUIManager.paused) {
 			if (direction == -1f) {
 				transform.Translate (-0.1f, 0, 0);
 			} else if (direction == 1f) {

@@ -25,7 +25,7 @@ public class archeryRobotAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!UIManagerScript.paused) {
+		if (!PauseUIManager.paused) {
 			posX = transform.position.x;
 			posY = transform.position.y;
 			cazPosX = caz.transform.position.x;

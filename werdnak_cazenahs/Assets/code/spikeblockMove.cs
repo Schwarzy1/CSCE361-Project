@@ -14,7 +14,7 @@ public class spikeblockMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!UIManagerScript.paused) {
+		if (!PauseUIManager.paused) {
 			if (i > distance) {
 				a = -1;
 			}

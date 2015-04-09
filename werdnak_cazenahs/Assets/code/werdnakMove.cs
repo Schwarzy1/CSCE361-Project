@@ -18,7 +18,7 @@ public class werdnakMove : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		if (!UIManagerScript.paused) {
+		if (!PauseUIManager.paused) {
 			if (lockMove == false) {
 				if (powerup == true) {
 					jumpAttack ();

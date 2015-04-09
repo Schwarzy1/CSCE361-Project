@@ -62,7 +62,7 @@ public class blobMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (!UIManagerScript.paused) {
+		if (!PauseUIManager.paused) {
 			if (adjacent == false) {
 				Move ();
 			} else {
