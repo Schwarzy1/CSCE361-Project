@@ -14,18 +14,20 @@ public class spikeblockMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (i > distance) {
-			a = -1;
+		if (!UIManagerScript.paused) {
+			if (i > distance) {
+				a = -1;
+			}
+			if (i < -1 * distance) {
+				a = 1;
+			}
+			if (direction == true) {
+				transform.Translate (0, a * speed, 0);
+			}
+			if (direction == false) {
+				transform.Translate (a * speed, 0, 0);
+			}
+			i += a;
 		}
-		if (i < -1 * distance) {
-			a = 1;
-		}
-		if (direction == true) {
-			transform.Translate (0, a * speed, 0);
-		}
-		if (direction == false) {
-			transform.Translate (a * speed, 0, 0);
-		}
-		i += a;
 	}
 }

@@ -27,13 +27,15 @@ public class lazerMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (direction == -1f) {
-			transform.Translate (-0.1f, 0, 0);
-		} else if (direction == 1f) {
-			transform.Translate (0.1f, 0, 0);
-		} 
-		if (Vector3.Distance (transform.position, caz.transform.position) >= distance && Vector3.Distance (transform.position, caz.transform.position) < 20) {
-			Destroy(gameObject);
+		if (!UIManagerScript.paused) {
+			if (direction == -1f) {
+				transform.Translate (-0.1f, 0, 0);
+			} else if (direction == 1f) {
+				transform.Translate (0.1f, 0, 0);
+			} 
+			if (Vector3.Distance (transform.position, caz.transform.position) >= distance && Vector3.Distance (transform.position, caz.transform.position) < 20) {
+				Destroy (gameObject);
+			}
 		}
 	}
 

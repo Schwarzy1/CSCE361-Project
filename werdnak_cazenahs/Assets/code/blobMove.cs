@@ -62,13 +62,14 @@ public class blobMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (adjacent == false) {
-			Move ();
-		} else {
-			AdjacentMove();
+		if (!UIManagerScript.paused) {
+			if (adjacent == false) {
+				Move ();
+			} else {
+				AdjacentMove ();
+			}
+			//GetComponent<Rigidbody2D> ().velocity = new Vector3 (1, 1, 1);
 		}
-		//GetComponent<Rigidbody2D> ().velocity = new Vector3 (1, 1, 1);
-
 	}
 
 	void OnCollisionEnter2D(Collision2D other){

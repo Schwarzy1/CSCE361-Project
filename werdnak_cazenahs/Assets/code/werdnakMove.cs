@@ -18,16 +18,18 @@ public class werdnakMove : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		if (lockMove == false) {
-			if (powerup == true) {
-				jumpAttack ();
-			} else {
-				basicAttack ();
-				move ();
+		if (!UIManagerScript.paused) {
+			if (lockMove == false) {
+				if (powerup == true) {
+					jumpAttack ();
+				} else {
+					basicAttack ();
+					move ();
+				}
 			}
-		}
-		if (Input.GetKey (KeyCode.I)) {
-			powerup = true;
+			if (Input.GetKey (KeyCode.I)) {
+				powerup = true;
+			}
 		}
 	}
 

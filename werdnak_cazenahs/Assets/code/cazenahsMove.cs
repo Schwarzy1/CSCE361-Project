@@ -8,25 +8,31 @@ public class cazenahsMove : MonoBehaviour {
 	public int coolDownWait = 0;
 	public bool powerUp = false;
 	GameObject lazer;
+	GameObject canvas;
 	Vector3 loc;
 	Quaternion quat = new Quaternion(0,0,0,0);
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
+
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(lockMove == false){
-			Move ();
-			Attack();
-		}
-		if(Input.GetKey(KeyCode.U)){
-			powerUp=true;
-		}
-		//GetComponent<Rigidbody2D> ().velocity = new Vector3 (1, 1, 1);
+		if (!UIManagerScript.paused) {
 
-	}
+			if (lockMove == false) {
+				Move ();
+				Attack ();
+			}
+			if (Input.GetKey (KeyCode.U)) {
+				powerUp = true;
+			}
+			//GetComponent<Rigidbody2D> ().velocity = new Vector3 (1, 1, 1);
+		}
+		}
+
+
 
 	void Attack(){
 		if (Input.GetKey (KeyCode.RightControl) && coolDownWait <= 0) {
