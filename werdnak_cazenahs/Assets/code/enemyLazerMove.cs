@@ -53,14 +53,15 @@ public class enemyLazerMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(!(-9900 > posX && posX > -10100)) {
-			transform.Translate (direction, 0, 0);
+		if (!PauseUIManager.paused) {
+			if (!(-9900 > posX && posX > -10100)) {
+				transform.Translate (direction, 0, 0);
 			
-			if (Vector3.Distance ( transform.position, pos) >= distance) {
-				Destroy(gameObject);
+				if (Vector3.Distance (transform.position, pos) >= distance) {
+					Destroy (gameObject);
+				}
 			}
 		}
-
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
@@ -69,4 +70,6 @@ public class enemyLazerMove : MonoBehaviour {
 		}
 		Destroy(gameObject);
 	}
+
+	
 }

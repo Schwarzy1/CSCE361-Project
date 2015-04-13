@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\code\CharSelectMangerScript.cs" />
+     <Compile Include="Assets\code\PauseUIManager.cs" />
      <Compile Include="Assets\code\UIManagerScript.cs" />
      <Compile Include="Assets\code\archeryRobotAttack.cs" />
      <Compile Include="Assets\code\blobMove.cs" />
