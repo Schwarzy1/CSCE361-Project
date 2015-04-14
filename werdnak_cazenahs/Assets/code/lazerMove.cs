@@ -18,7 +18,9 @@ public class lazerMove : MonoBehaviour {
 		Physics2D.IgnoreLayerCollision(13,15,true);
 		caz = GameObject.Find ("Caz");
 		direction = caz.GetComponent<cazenahsMove> ().transform.localScale.x;
-		if (caz.GetComponent<cazenahsMove> ().powerUp == true) {
+		 if (caz.GetComponent<cazenahsMove> ().dubPowerUp == true) {
+			distance = 12.8f;
+		}else if (caz.GetComponent<cazenahsMove> ().powerUp == true) {
 			distance = 6.4f;
 		} else {
 			distance = 3.2f;

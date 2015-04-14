@@ -7,6 +7,7 @@ public class cazenahsMove : MonoBehaviour {
 	public bool lockMove = false;
 	public int coolDownWait = 0;
 	public bool powerUp = false;
+	public bool dubPowerUp=false;
 	GameObject lazer;
 	GameObject canvas;
 	Vector3 loc;
@@ -27,6 +28,9 @@ public class cazenahsMove : MonoBehaviour {
 			}
 			if (Input.GetKey (KeyCode.U)) {
 				powerUp = true;
+			}
+			if(Input.GetKey (KeyCode.O)){
+				dubPowerUp=true;
 			}
 			//GetComponent<Rigidbody2D> ().velocity = new Vector3 (1, 1, 1);
 		}
