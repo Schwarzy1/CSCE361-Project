@@ -3,7 +3,7 @@ using System.Collections;
 
 public class heartsHandler : MonoBehaviour {
 
-	int health = 6;
+	public int health = 6;
 	Animator animator;
 	// Use this for initialization
 	void Start () {
@@ -19,9 +19,8 @@ public class heartsHandler : MonoBehaviour {
 
 	public void TakeDamage(int damage){
 		health -= damage;
-		if(health >= 6){
-			health = 6;
-		}else if(health <= 0){
+
+		if(health <= 0){
 			health = 0;
 			Application.LoadLevel ("GameOver");
 		}
