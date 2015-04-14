@@ -10,6 +10,7 @@ public class archeryRobotAttack : MonoBehaviour {
 	float werdPosX;
 	float werdPosY;
 	float werdDist;
+	enemyLazerMove elm;
 	Quaternion quat = new Quaternion(0,0,0,0);
 	float posX;
 	float posY;
@@ -45,6 +46,8 @@ public class archeryRobotAttack : MonoBehaviour {
 					loc = new Vector3 (transform.position.x, transform.position.y - 0.3f, transform.position.z - 0.5f);
 					lazer = GameObject.Find ("lazer_green");
 					Instantiate (lazer, loc, quat);
+					elm = lazer.GetComponent<enemyLazerMove>();
+					elm.distance = radius;
 					coolDownWait = 30;
 				}
 				if (coolDownWait > 0) {
@@ -61,6 +64,8 @@ public class archeryRobotAttack : MonoBehaviour {
 					loc = new Vector3 (transform.position.x, transform.position.y - 0.3f, transform.position.z - 0.5f);
 					lazer = GameObject.Find ("lazer_green");
 					Instantiate (lazer, loc, quat);
+					elm = lazer.GetComponent<enemyLazerMove>();
+					elm.distance = radius;
 					coolDownWait = 30;
 				}
 				if (coolDownWait > 0) {
