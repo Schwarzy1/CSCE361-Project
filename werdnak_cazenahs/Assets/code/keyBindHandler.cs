@@ -14,7 +14,7 @@ public class keyBindHandler : MonoBehaviour {
 	public KeyCode cazRight = KeyCode.RightArrow;
 	public KeyCode cazDown = KeyCode.DownArrow;
 	public KeyCode cazAttack = KeyCode.RightControl;
-	
+
 	bool changeWerdUp = false;
 	bool changeWerdDown = false;
 	bool changeWerdLeft = false;
@@ -26,7 +26,7 @@ public class keyBindHandler : MonoBehaviour {
 	bool changeCazRight = false;
 	bool changeCazAttack = false;
 	bool changePause = false;
-	bool changeKey = false;
+	public static bool changeKey = false;
 
 	
 	public void ChangeWerdUp(){

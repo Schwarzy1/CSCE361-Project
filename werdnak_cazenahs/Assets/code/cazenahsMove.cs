@@ -8,12 +8,14 @@ public class cazenahsMove : MonoBehaviour {
 	public int coolDownWait = 0;
 	public bool powerUp = false;
 	public bool dubPowerUp=false;
+	public keyBindHandler keyBindScript;
 	GameObject lazer;
 	GameObject canvas;
 	Vector3 loc;
 	Quaternion quat = new Quaternion(0,0,0,0);
 	// Use this for initialization
 	void Start () {
+		keyBindScript = GameObject.Find ("keyBindHandler").GetComponent<keyBindHandler>();
 		animator = GetComponent<Animator>();
 
 	}
@@ -39,7 +41,7 @@ public class cazenahsMove : MonoBehaviour {
 
 
 	void Attack(){
-		if (Input.GetKey (KeyCode.RightControl) && coolDownWait <= 0) {
+		if (Input.GetKey (keyBindScript.cazAttack) && coolDownWait <= 0) {
 			loc = new Vector3(transform.position.x, transform.position.y-0.1f, transform.position.z);
 			lazer = GameObject.Find("lazer_blue");
 			Instantiate(lazer, loc , quat);
@@ -51,20 +53,20 @@ public class cazenahsMove : MonoBehaviour {
 
 	void Move(){
 		animator.SetFloat("Speed", 0);
-		if(Input.GetKey(KeyCode.UpArrow)){
+		if(Input.GetKey(keyBindScript.cazUp)){
 			transform.Translate(0,speed,0);
 			animator.SetFloat("Speed", 1);
 		}
-		if(Input.GetKey(KeyCode.DownArrow)){
+		if(Input.GetKey(keyBindScript.cazDown)){
 			transform.Translate(0,(-1)*speed,0);
 			animator.SetFloat("Speed", 1);
 		}
-		if(Input.GetKey(KeyCode.LeftArrow)){
+		if(Input.GetKey(keyBindScript.cazLeft)){
 			transform.Translate((-1)*speed,0,0);
 			transform.localScale = (new Vector3(-1,1,1));
 			animator.SetFloat("Speed", 1);
 		}
-		if(Input.GetKey(KeyCode.RightArrow)){
+		if(Input.GetKey(keyBindScript.cazRight)){
 			transform.Translate(speed,0,0);
 			transform.localScale = (new Vector3(1,1,1));
 			animator.SetFloat("Speed", 1);

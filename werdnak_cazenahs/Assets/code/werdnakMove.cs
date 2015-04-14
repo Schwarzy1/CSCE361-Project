@@ -9,8 +9,10 @@ public class werdnakMove : MonoBehaviour {
 	public bool lockMove = false;
 	public bool attacking = false;
 	public int attackCoolDown = 0;
+	public keyBindHandler keyBindScript;
 	// Use this for initialization
 	void Start () {
+		keyBindScript = GameObject.Find ("keyBindHandler").GetComponent<keyBindHandler>();
 		animator = GetComponent<Animator>();
 		//alows sword to pass through objects marked as wall and pit
 		Physics2D.IgnoreLayerCollision(10,9,true);
@@ -34,7 +36,7 @@ public class werdnakMove : MonoBehaviour {
 	}
 
 	void basicAttack(){
-		if(Input.GetKeyDown(KeyCode.Space)){
+		if(Input.GetKeyDown(keyBindScript.werdAttack)){
 			speed = .09f;
 			attacking = true;
 			animator.SetBool("Attacking", true);
@@ -50,7 +52,7 @@ public class werdnakMove : MonoBehaviour {
 	}
 
 	void jumpAttack(){
-		if(Input.GetKeyDown(KeyCode.Space) && attacking == false){
+		if(Input.GetKeyDown(keyBindScript.werdAttack) && attacking == false){
 			speed = .12f;
 			Physics2D.IgnoreLayerCollision(8,9,true);
 			attacking = true;
@@ -83,23 +85,23 @@ public class werdnakMove : MonoBehaviour {
 	void move(){
 		animator.SetFloat("Speed", 0);
 		direction = 0;
-		if(Input.GetKey(KeyCode.W)){
+		if(Input.GetKey(keyBindScript.werdUp)){
 			transform.Translate(0,speed,0);
 			animator.SetFloat("Speed", 1);
 			direction = 1;
 		}
-		if(Input.GetKey(KeyCode.S)){
+		if(Input.GetKey(keyBindScript.werdDown)){
 			transform.Translate(0,(-1)*speed,0);
 			animator.SetFloat("Speed", 1);
 			direction = 2;
 		}
-		if(Input.GetKey(KeyCode.A)){
+		if(Input.GetKey(keyBindScript.werdLeft)){
 			transform.Translate((-1)*speed,0,0);
 			transform.localScale = (new Vector3(-1,1,1));
 			animator.SetFloat("Speed", 1);
 			direction = 3;
 		}
-		if(Input.GetKey(KeyCode.D)){
+		if(Input.GetKey(keyBindScript.werdRight)){
 			transform.Translate(speed,0,0);
 			transform.localScale = (new Vector3(1,1,1));
 			animator.SetFloat("Speed", 1);

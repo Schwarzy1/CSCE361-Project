@@ -52,6 +52,12 @@ public class UIManagerScript : MonoBehaviour {
 	public void BackLevelSel(){
 		Application.LoadLevel ("CharacterSelect");
 	}
+
+	public void BackOptions(){
+		keyBindHandler.changeKey = false;
+		Application.LoadLevel ("Menus");
+	}
+
 	public void LevelOne(){
 		PauseUIManager.paused = false;
 
