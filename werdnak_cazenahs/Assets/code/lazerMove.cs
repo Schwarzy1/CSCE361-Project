@@ -45,6 +45,9 @@ public class lazerMove : MonoBehaviour {
 		if(other.gameObject.tag.Equals("enemy")){
 			other.gameObject.GetComponent<enemyHeathHandler>().TakeDamage(1);
 		}
+		else if (other.gameObject.tag.Equals("switch")){
+			other.gameObject.GetComponent<switchController>().changeSwitch('c');
+		}
 		Destroy(gameObject);
 	}
 
