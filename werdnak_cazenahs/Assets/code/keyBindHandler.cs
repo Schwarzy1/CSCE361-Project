@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class keyBindHandler : MonoBehaviour {
@@ -28,100 +29,156 @@ public class keyBindHandler : MonoBehaviour {
 	bool changePause = false;
 	public static bool changeKey = false;
 
+
+	GameObject WUBut = GameObject.Find("WUP");
+	GameObject WRBut = GameObject.Find("WRight");
+	GameObject WLBut = GameObject.Find("WLeft");
+	GameObject WABut = GameObject.Find("WAttack");
+	GameObject CUBut = GameObject.Find("CUP");
+	GameObject CDBut = GameObject.Find("CDown");
+	GameObject CLBut = GameObject.Find("CLeft");
+	GameObject CRBut = GameObject.Find("CRight");
+	GameObject CABut = GameObject.Find("CAttack");
+
+	public void makeFalse(){
+		 changeWerdUp = false;
+		 changeWerdDown = false;
+		 changeWerdLeft = false;
+		 changeWerdRight = false;
+		 changeWerdAttack = false;
+		 changeCazUp = false;
+		 changeCazDown = false;
+		 changeCazLeft = false;
+		 changeCazRight = false;
+		 changeCazAttack = false;
+		 changePause = false;
+	}
+
 	
 	public void ChangeWerdUp(){
+		makeFalse ();
 		changeWerdUp = true;
 		changeKey = true;
 	}
 	public void ChangeWerdDown(){
+		makeFalse ();
 		changeWerdDown = true;
 		changeKey = true;
 	}
 	public void ChangeWerdLeft(){
+		makeFalse ();
 		changeWerdLeft = true;
 		changeKey = true;
 	}
 	public void ChangeWerdRight(){
+		makeFalse ();
 		changeWerdRight = true;
 		changeKey = true;
 	}
 	public void ChangeWerdAttack(){
+		makeFalse ();
 		changeWerdAttack = true;
 		changeKey = true;
 	}
 	
 	public void ChangeCazUp(){
+		makeFalse ();
 		changeCazUp = true;
 		changeKey = true;
 	}
 	public void ChangeCazDown(){
+		makeFalse ();
 		changeCazDown = true;
 		changeKey = true;
 	}
 	public void ChangeCazLeft(){
+		makeFalse ();
 		changeCazLeft = true;
 		changeKey = true;
 	}
 	public void ChangeCazRight(){
+		makeFalse ();
 		changeCazRight = true;
 		changeKey = true;
 	}
 	public void ChangeCazAttack(){
+		makeFalse ();
 		changeCazAttack = true;
 		changeKey = true;
 	}
 
 	public void ChangePause(){
+		makeFalse ();
 		changePause = true;
 		changeKey = true;
 	}
 
-	// Use this for initialization
-	void Start () {
-	}
+
 	
 	// Update is called once per frame
-	void OnGUI() {
+	public void OnGUI() {
 		Event e = Event.current;
 		if (changeKey && e.isKey) {
 			if(changeWerdUp){
 				werdUp = e.keyCode;
+				GameObject WUBut = GameObject.Find("WUP");
+				WUBut.GetComponentInChildren<Text>().text = "Move UP - "+ werdUp.ToString();
 				changeWerdUp = false;
 			}
 			else if(changeWerdDown){
+
 				werdDown = e.keyCode;
+				GameObject WDBut = GameObject.Find("WDown");
+				WDBut.GetComponentInChildren<Text>().text = "Move DOWN - "+ werdDown.ToString();
+
 				changeWerdDown = false;
 			}
 			else if(changeWerdLeft){
 				werdLeft = e.keyCode;
+				GameObject WLBut = GameObject.Find("WLeft");
+				WLBut.GetComponentInChildren<Text>().text = "Move LEFT - "+ werdLeft.ToString();
 				changeWerdLeft = false;
 			}
 			else if(changeWerdRight){
 				werdRight = e.keyCode;
+				GameObject WRBut = GameObject.Find("WRight");
+				WRBut.GetComponentInChildren<Text>().text = "Move RIGHT - "+ werdRight.ToString();
 				changeWerdRight = false;
 			}
 			else if(changeWerdAttack){
 				werdAttack = e.keyCode;
+				GameObject WABut = GameObject.Find("WAttack");
+				WABut.GetComponentInChildren<Text>().text = "Attack - "+ werdAttack.ToString();
 				changeWerdAttack = false;
 			}
 			else if(changeCazUp){
 				cazUp = e.keyCode;
+				GameObject CUBut = GameObject.Find("CUP");
+				CUBut.GetComponentInChildren<Text>().text = "Move UP - "+ cazUp.ToString();
 				changeCazUp = false;
 			}
 			else if(changeCazDown){
 				cazDown = e.keyCode;
+				GameObject CDBut = GameObject.Find("CDown");
+				CDBut.GetComponentInChildren<Text>().text = "Move DOWN - "+ cazDown.ToString();
 				changeCazDown = false;
 			}
 			else if(changeCazLeft){
 				cazLeft = e.keyCode;
+				GameObject CLBut = GameObject.Find("CLeft");
+				CLBut.GetComponentInChildren<Text>().text = "Move LEFT - "+ cazLeft.ToString();
 				changeCazLeft = false;
 			}
 			else if(changeCazRight){
 				cazRight = e.keyCode;
+				GameObject CRBut = GameObject.Find("CRight");
+				CRBut.GetComponentInChildren<Text>().text = "Move RIGHT - "+ cazRight.ToString();
 				changeCazRight = false;
 			}
 			else if(changeCazAttack){
 				cazAttack = e.keyCode;
+				GameObject CABut = GameObject.Find("CAttack");
+				CABut.GetComponentInChildren<Text>().text = "Attack - "+ cazAttack.ToString();
 				changeCazAttack = false;
 			}
 			else if(changePause){
