@@ -8,7 +8,7 @@ public class enemyLazerMove : MonoBehaviour {
 	heartsHandler hh;
 	GameObject werd;
 	GameObject caz;
-	float distance;
+	public float distance = 3.2f;
 	float cazPosX;
 	float cazDist;
 	float werdPosX;
@@ -48,7 +48,7 @@ public class enemyLazerMove : MonoBehaviour {
 			}
 
 		}
-		distance = 3.2f;
+
 	}
 	
 	// Update is called once per frame
