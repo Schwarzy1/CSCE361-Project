@@ -1,12 +1,44 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class buttonKeyHandler : MonoBehaviour {
 
-	public keyBindHandler keys;
+	keyBindHandler keys;
 	// Use this for initialization
 	void Start () {
-		keys = GameObject.Find ("keyBindHandler").GetComponent<keyBindHandler>();
+		keys = GameObject.Find ("KeyBindHandler").GetComponent<keyBindHandler>();
+		
+		GameObject WUBut = GameObject.Find("WUP");
+		WUBut.GetComponentInChildren<Text>().text = "Move UP - "+ keys.werdUp.ToString();
+
+		GameObject WDBut = GameObject.Find("WDown");
+		WDBut.GetComponentInChildren<Text>().text = "Move DOWN - "+ keys.werdDown.ToString();
+
+		GameObject WLBut = GameObject.Find("WLeft");
+		WLBut.GetComponentInChildren<Text>().text = "Move LEFT - "+ keys.werdLeft.ToString();
+
+		GameObject WRBut = GameObject.Find("WRight");
+		WRBut.GetComponentInChildren<Text>().text = "Move RIGHT - "+ keys.werdRight.ToString();
+
+		GameObject WABut = GameObject.Find("WAttack");
+		WABut.GetComponentInChildren<Text>().text = "Attack - "+ keys.werdAttack.ToString();
+
+		GameObject CUBut = GameObject.Find("CUP");
+		CUBut.GetComponentInChildren<Text>().text = "Move UP - "+ keys.cazUp.ToString();
+
+		GameObject CDBut = GameObject.Find("CDown");
+		CDBut.GetComponentInChildren<Text>().text = "Move DOWN - "+ keys.cazDown.ToString();
+
+		GameObject CLBut = GameObject.Find("CLeft");
+		CLBut.GetComponentInChildren<Text>().text = "Move LEFT - "+ keys.cazLeft.ToString();
+
+		GameObject CRBut = GameObject.Find("CRight");
+		CRBut.GetComponentInChildren<Text>().text = "Move RIGHT - "+ keys.cazRight.ToString();
+
+		GameObject CABut = GameObject.Find("CAttack");
+		CABut.GetComponentInChildren<Text>().text = "Attack - "+ keys.cazAttack.ToString();
+
 	}
 
 	

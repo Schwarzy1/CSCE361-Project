@@ -6,24 +6,33 @@ public class werdnakMove : MonoBehaviour {
 	Animator animator;
 	int direction = 0;
 	public bool powerup = false;
+	public bool secondPower=false;
 	public bool lockMove = false;
 	public bool attacking = false;
 	public int attackCoolDown = 0;
-	public keyBindHandler keyBindScript;
+	keyBindHandler keyBindScript;
 	// Use this for initialization
 	void Start () {
-		keyBindScript = GameObject.Find ("keyBindHandler").GetComponent<keyBindHandler>();
+		keyBindScript = GameObject.Find ("KeyBindHandler").GetComponent<keyBindHandler>();
 		animator = GetComponent<Animator>();
 		//alows sword to pass through objects marked as wall and pit
 		Physics2D.IgnoreLayerCollision(10,9,true);
 		Physics2D.IgnoreLayerCollision(10,12,true);
+		Physics2D.IgnoreLayerCollision (10, 18, true);
+		Physics2D.IgnoreLayerCollision (10, 14, true);
 	}
 
 	void FixedUpdate () {
 		if (!PauseUIManager.paused) {
 			if (lockMove == false) {
 				if (powerup == true) {
+					if(secondPower==true){
+						DoublejumpAttack();
+
+					}
+					else{
 					jumpAttack ();
+					}
 				} else {
 					basicAttack ();
 					move ();
@@ -48,6 +57,38 @@ public class werdnakMove : MonoBehaviour {
 			attacking = false;
 		} else {
 			attackCoolDown--;
+		}
+	}
+	void DoublejumpAttack(){
+		if(Input.GetKeyDown(keyBindScript.werdAttack) && attacking == false){
+			speed = .15f;
+			Physics2D.IgnoreLayerCollision(8,9,true);
+			Physics2D.IgnoreLayerCollision(8,18,true);
+			attacking = true;
+			animator.SetBool("Attacking", true);
+			attackCoolDown = 20;
+		}
+		if (attackCoolDown <= 0) {
+			speed = 0.08f;
+			animator.SetBool ("Attacking", false);
+			attacking = false;
+			Physics2D.IgnoreLayerCollision (8, 9, false);
+			Physics2D.IgnoreLayerCollision (8, 18, false);
+			move ();
+			
+		} else {
+			attackCoolDown--;
+		}
+		if(attacking == true){
+			if(direction == 1){
+				transform.Translate(0,speed,0);
+			}if(direction == 2){
+				transform.Translate(0,(-1)*speed,0);
+			}if(direction == 3){
+				transform.Translate((-1)*speed,0,0);
+			}if(direction == 4){
+				transform.Translate(speed,0,0);
+			}
 		}
 	}
 

@@ -52,6 +52,7 @@
      <Compile Include="Assets\code\archeryRobotAttack.cs" />
      <Compile Include="Assets\code\blobMove.cs" />
      <Compile Include="Assets\code\buttonController.cs" />
+     <Compile Include="Assets\code\buttonKeyHandler.cs" />
      <Compile Include="Assets\code\cameraHandler.cs" />
      <Compile Include="Assets\code\cazenahsMove.cs" />
      <Compile Include="Assets\code\damageHandler.cs" />
@@ -59,6 +60,7 @@
      <Compile Include="Assets\code\enemyHeathHandler.cs" />
      <Compile Include="Assets\code\enemyLazerMove.cs" />
      <Compile Include="Assets\code\heartsHandler.cs" />
+     <Compile Include="Assets\code\keyBindHandler.cs" />
      <Compile Include="Assets\code\keyHandler.cs" />
      <Compile Include="Assets\code\lazerMove.cs" />
      <Compile Include="Assets\code\meleeRobotMove.cs" />
@@ -67,6 +69,7 @@
      <Compile Include="Assets\code\spikeblockMove.cs" />
      <Compile Include="Assets\code\splashScreenScript.cs" />
      <Compile Include="Assets\code\superBlobMove.cs" />
+     <Compile Include="Assets\code\switchController.cs" />
      <Compile Include="Assets\code\werdnakMove.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

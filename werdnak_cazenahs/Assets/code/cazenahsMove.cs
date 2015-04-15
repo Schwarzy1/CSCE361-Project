@@ -4,18 +4,18 @@ using System.Collections;
 public class cazenahsMove : MonoBehaviour {
 	float speed = .1f;
 	Animator animator;
+	keyBindHandler keyBindScript;
 	public bool lockMove = false;
 	public int coolDownWait = 0;
 	public bool powerUp = false;
 	public bool dubPowerUp=false;
-	public keyBindHandler keyBindScript;
 	GameObject lazer;
 	GameObject canvas;
 	Vector3 loc;
 	Quaternion quat = new Quaternion(0,0,0,0);
 	// Use this for initialization
 	void Start () {
-		keyBindScript = GameObject.Find ("keyBindHandler").GetComponent<keyBindHandler>();
+		keyBindScript = GameObject.Find ("KeyBindHandler").GetComponent<keyBindHandler>();
 		animator = GetComponent<Animator>();
 
 	}
