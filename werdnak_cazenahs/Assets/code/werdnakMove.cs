@@ -9,10 +9,10 @@ public class werdnakMove : MonoBehaviour {
 	public bool lockMove = false;
 	public bool attacking = false;
 	public int attackCoolDown = 0;
-	public keyBindHandler keyBindScript;
+	keyBindHandler keyBindScript;
 	// Use this for initialization
 	void Start () {
-		keyBindScript = GameObject.Find ("keyBindHandler").GetComponent<keyBindHandler>();
+		keyBindScript = GameObject.Find ("KeyBindHandler").GetComponent<keyBindHandler>();
 		animator = GetComponent<Animator>();
 		//alows sword to pass through objects marked as wall and pit
 		Physics2D.IgnoreLayerCollision(10,9,true);
