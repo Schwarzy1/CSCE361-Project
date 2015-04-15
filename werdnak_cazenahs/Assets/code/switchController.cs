@@ -4,7 +4,6 @@ using System.Collections;
 public class switchController : MonoBehaviour {
 	
 	Animator animator;
-	public bool switchDown = false;
 	public doorHandler doorHand;
 	public bool isWerds=true;
 	public int cooldown= 0;
@@ -19,29 +18,23 @@ public class switchController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-		if(isWerds && other.gameObject.name.Equals("Werd") && other.gameObject.GetComponent<werdnakMove>().attacking == true && switchDown==false){
+		if(isWerds && other.gameObject.name.Equals("Werd") && other.gameObject.GetComponent<werdnakMove>().attacking == true){
 			changeSwitch('w');
 		}
-		else if(isWerds && other.gameObject.name.Equals("Werd") && other.gameObject.GetComponent<werdnakMove>().attacking == true && switchDown==true){
-			changeSwitch('w');
-		}
+
 	}
 
 	public void changeSwitch(char owner){
-		if (switchDown == false && owner=='w' && isWerds && cooldown<=0) {
-			switchDown = true;
+		if (doorHand.open == false && owner=='w' && isWerds && cooldown<=0) {
 			doorHand.OpenDoor();
 			cooldown=45;
-		} else if (switchDown == true && owner=='w' && isWerds && cooldown<=0) {
-			switchDown = false;
+		} else if (doorHand.open == true && owner=='w' && isWerds && cooldown<=0) {
 			doorHand.CloseDoor();
 			cooldown=45;
 		}
-		else if (switchDown == false && owner=='c' && !isWerds) {
-			switchDown = true;
+		else if (doorHand.open == false && owner=='c' && !isWerds) {
 			doorHand.OpenDoor();
-		} else if (switchDown == true && owner=='c' && !isWerds) {
-			switchDown = false;
+		} else if (doorHand.open == true && owner=='c' && !isWerds) {
 			doorHand.CloseDoor();
 		}
 
