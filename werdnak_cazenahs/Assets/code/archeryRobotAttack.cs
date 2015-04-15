@@ -5,11 +5,15 @@ public class archeryRobotAttack : MonoBehaviour {
 	GameObject werd;
 	GameObject caz;
 	float cazPosX;
+	float scale = 1;
 	float cazPosY;
 	float cazDist;
 	float werdPosX;
 	float werdPosY;
 	float werdDist;
+	float randX;
+	float randY;
+	public float coolDownMove = 100;
 	enemyLazerMove elm;
 	Quaternion quat = new Quaternion(0,0,0,0);
 	float posX;
@@ -43,12 +47,23 @@ public class archeryRobotAttack : MonoBehaviour {
 			werdPosX = werd.transform.position.x;
 			werdPosY = werd.transform.position.y;
 			werdDist = Vector3.Distance (transform.position, werd.transform.position);
+			if(boss && coolDownMove <= 0){
+				scale = 2;
+				randX = Random.Range(roomX-5.5f, roomX+5.5f);
+				randY = Random.Range(roomY-2.5f, roomY+2.5f);
+				transform.position = (new Vector3(randX, randY, 0));
+				coolDownMove = 100;
+			}
+			else if(boss && coolDownMove > 0){
+				scale = 2;
+				coolDownMove--;
+			}
 			if(cazPosX > roomX-6 && cazPosX < roomX+6 && cazPosY > roomY-3 && cazPosY < roomY+3){
 				if (cazPosX < posX + radius && cazPosX > posX - radius && cazPosY < posY + radius && cazPosY > posY - radius && cazDist < werdDist) {
 					if (cazPosX < posX) {
-						transform.localScale = (new Vector3 (1, 1, 1));
+						transform.localScale = (new Vector3 (scale, scale, 1));
 					} else if (cazPosX > posX) {
-						transform.localScale = (new Vector3 (-1, 1, 1));
+						transform.localScale = (new Vector3 (-scale, scale, 1));
 					}
 					if (coolDownWait <= 0) {
 						loc = new Vector3 (transform.position.x, transform.position.y - 0.3f, transform.position.z - 0.5f);
@@ -64,9 +79,9 @@ public class archeryRobotAttack : MonoBehaviour {
 				}
 				if (werdPosX < posX + radius && werdPosX > posX - radius && werdPosY < posY + radius && werdPosY > posY - radius && cazDist > werdDist) {
 					if (werdPosX < posX) {
-						transform.localScale = (new Vector3 (1, 1, 1));
+						transform.localScale = (new Vector3 (scale, scale, 1));
 					} else if (werdPosX > posX) {
-						transform.localScale = (new Vector3 (-1, 1, 1));
+						transform.localScale = (new Vector3 (-scale, scale, 1));
 					}
 					if (coolDownWait <= 0) {
 						loc = new Vector3 (transform.position.x, transform.position.y - 0.3f, transform.position.z - 0.5f);
