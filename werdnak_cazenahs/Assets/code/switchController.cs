@@ -14,7 +14,9 @@ public class switchController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(cooldown>0)cooldown--;
+		if (cooldown > 0) {
+			cooldown--;
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
@@ -27,10 +29,10 @@ public class switchController : MonoBehaviour {
 	public void changeSwitch(char owner){
 		if (doorHand.open == false && owner=='w' && isWerds && cooldown<=0) {
 			doorHand.OpenDoor();
-			cooldown=45;
+			cooldown=20;
 		} else if (doorHand.open == true && owner=='w' && isWerds && cooldown<=0) {
 			doorHand.CloseDoor();
-			cooldown=45;
+			cooldown=20;
 		}
 		else if (doorHand.open == false && owner=='c' && !isWerds) {
 			doorHand.OpenDoor();
