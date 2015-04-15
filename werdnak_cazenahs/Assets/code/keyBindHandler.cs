@@ -29,16 +29,30 @@ public class keyBindHandler : MonoBehaviour {
 	bool changePause = false;
 	public static bool changeKey = false;
 
+	private static keyBindHandler _instance ;
 
-	GameObject WUBut = GameObject.Find("WUP");
-	GameObject WRBut = GameObject.Find("WRight");
-	GameObject WLBut = GameObject.Find("WLeft");
-	GameObject WABut = GameObject.Find("WAttack");
-	GameObject CUBut = GameObject.Find("CUP");
-	GameObject CDBut = GameObject.Find("CDown");
-	GameObject CLBut = GameObject.Find("CLeft");
-	GameObject CRBut = GameObject.Find("CRight");
-	GameObject CABut = GameObject.Find("CAttack");
+
+	public void Awake(){
+		
+		GameObject WUBut = GameObject.Find ("WUP");
+		GameObject WRBut = GameObject.Find ("WRight");
+		GameObject WLBut = GameObject.Find ("WLeft");
+		GameObject WABut = GameObject.Find ("WAttack");
+		GameObject CUBut = GameObject.Find ("CUP");
+		GameObject CDBut = GameObject.Find ("CDown");
+		GameObject CLBut = GameObject.Find ("CLeft");
+		GameObject CRBut = GameObject.Find ("CRight");
+		GameObject CABut = GameObject.Find ("CAttack");
+
+		if (!_instance) {
+			_instance = this;
+		} else {
+			Destroy (this.gameObject);
+		}
+		DontDestroyOnLoad(this.gameObject);
+	}
+
+
 
 	public void makeFalse(){
 		 changeWerdUp = false;
