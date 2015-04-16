@@ -28,7 +28,7 @@ public class doorHandler : MonoBehaviour {
 					roomHand.MoveLeft();
 				}else if(doorSide == 90){
 					roomHand.MoveUp();
-				}else if(doorSide == 180){
+				}else if(doorSide < 190&& doorSide>170){
 					roomHand.MoveRight();
 				}else if(doorSide == 270){
 					roomHand.MoveDown();
