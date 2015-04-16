@@ -43,11 +43,15 @@ public class switchController : MonoBehaviour {
 				doorHand.CloseDoor ();
 			}
 		} else {
-			if(pit.activeInHierarchy){
+			if(pit.activeInHierarchy && cooldown<=0){
 				pit.SetActive(false);
+				cooldown=20;
 			}
 			else{
-				pit.SetActive(true);
+				if(cooldown<=0){
+					pit.SetActive(true);
+					cooldown=20;
+				}
 			}
 		}
 	}
