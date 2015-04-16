@@ -25,11 +25,8 @@ public class enemyHeathHandler : MonoBehaviour {
 		health -= damage;
 		if(health <= 0){
 			Destroy(gameObject);
-			if(isBoss){
-				int wait=1000;
-				while(wait>0){
-					wait--;
-				}
+			if(isBoss &&this.name=="superBlob" ){
+
 				Application.LoadLevel("LevelOneComplete");
 			}
 		}

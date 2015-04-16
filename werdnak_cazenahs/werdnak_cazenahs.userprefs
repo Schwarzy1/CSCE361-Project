@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\code\switchController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\code\enemyHeathHandler.cs">
     <Files>
-      <File FileName="Assets\code\blobMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\code\switchController.cs" Line="52" Column="6" />
+      <File FileName="Assets\code\enemyHeathHandler.cs" Line="28" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
