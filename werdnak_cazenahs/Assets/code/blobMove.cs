@@ -10,8 +10,8 @@ public class blobMove : MonoBehaviour {
 	float radius = 1;
 	float STARTX;
 	float STARTY;
-	bool isOne=false;
-	bool isTwo=false;
+	public bool hasDoor=false;
+
 	bool adjacent = false;
 	 public doorHandler doorhand;
 	Animator animator;
@@ -38,25 +38,16 @@ public class blobMove : MonoBehaviour {
 		caz = GameObject.Find ("Caz");
 		werd = GameObject.Find ("Werd");
 		animator = GetComponent<Animator>();
-		if(this.name==("blob 1")){
-			this.
-			isOne=true;
-		}
-		if(this.name==("blob")){
-			this.
-				isTwo=true;
-		}
+
 
 	}
 		public void OnDestroy(){
 	
-		if (isOne) {
+		if (hasDoor) {
 			doorhand.OpenDoor ();
 
 		}
-		if (isTwo) {
-			doorhand.OpenDoor ();
-		}
+
 	}
 	
 	
