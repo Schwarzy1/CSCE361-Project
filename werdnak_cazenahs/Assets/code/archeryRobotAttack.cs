@@ -6,6 +6,8 @@ public class archeryRobotAttack : MonoBehaviour {
 	GameObject caz;
 	float cazPosX;
 	float scale = 1;
+	float lazerScaleX = 1;
+	float lazerScaleY = 1;
 	float cazPosY;
 	float cazDist;
 	float werdPosX;
@@ -47,11 +49,16 @@ public class archeryRobotAttack : MonoBehaviour {
 			werdPosX = werd.transform.position.x;
 			werdPosY = werd.transform.position.y;
 			werdDist = Vector3.Distance (transform.position, werd.transform.position);
-			if(boss && coolDownMove <= 0){
+			if(boss){
 				scale = 2;
+				lazerScaleX = 2;
+				lazerScaleY = 5;
+			}
+			if(boss && coolDownMove <= 0){
+
 				randX = Random.Range(roomX-5.5f, roomX+5.5f);
 				randY = Random.Range(roomY-2.5f, roomY+2.5f);
-				transform.position = (new Vector3(randX, randY, 0));
+				transform.position = (new Vector3(randX, randY, -1));
 				coolDownMove = 100;
 			}
 			else if(boss && coolDownMove > 0){
@@ -71,7 +78,18 @@ public class archeryRobotAttack : MonoBehaviour {
 						Instantiate (lazer, loc, quat);
 						elm = lazer.GetComponent<enemyLazerMove>();
 						elm.distance = radius;
-						coolDownWait = 30;
+						elm.transform.localScale = (new Vector3 (lazerScaleX, lazerScaleY, 1));
+						coolDownWait = 40;
+					}
+					if(boss && (coolDownWait == 35 || coolDownWait == 30)){
+						
+						loc = new Vector3 (transform.position.x, transform.position.y - 0.3f, transform.position.z - 0.5f);
+						lazer = GameObject.Find ("lazer_green");
+						Instantiate (lazer, loc, quat);
+						elm = lazer.GetComponent<enemyLazerMove>();
+						elm.distance = radius;
+						elm.transform.localScale = (new Vector3 (lazerScaleX, lazerScaleY, 1));
+						
 					}
 					if (coolDownWait > 0) {
 						coolDownWait--;
@@ -89,8 +107,21 @@ public class archeryRobotAttack : MonoBehaviour {
 						Instantiate (lazer, loc, quat);
 						elm = lazer.GetComponent<enemyLazerMove>();
 						elm.distance = radius;
-						coolDownWait = 30;
+						elm.transform.localScale = (new Vector3 (lazerScaleX, lazerScaleY, 1));
+
+						coolDownWait = 40;
 					}
+					if(boss && (coolDownWait == 35 || coolDownWait == 30)){
+						
+						loc = new Vector3 (transform.position.x, transform.position.y - 0.3f, transform.position.z - 0.5f);
+						lazer = GameObject.Find ("lazer_green");
+						Instantiate (lazer, loc, quat);
+						elm = lazer.GetComponent<enemyLazerMove>();
+						elm.distance = radius;
+						elm.transform.localScale = (new Vector3 (lazerScaleX, lazerScaleY, 1));
+						
+					}
+
 					if (coolDownWait > 0) {
 						coolDownWait--;
 					}

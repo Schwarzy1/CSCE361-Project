@@ -20,10 +20,11 @@ public class enemyLazerMove : MonoBehaviour {
 		Physics2D.IgnoreLayerCollision(17,1,true);
 		Physics2D.IgnoreLayerCollision(17,9,true);
 		Physics2D.IgnoreLayerCollision(17,10,true);
-		Physics2D.IgnoreLayerCollision(17,13,true);
+		//Physics2D.IgnoreLayerCollision(17,13,true);
 		Physics2D.IgnoreLayerCollision(17,14,true);
 		Physics2D.IgnoreLayerCollision(17,15,true);
 		Physics2D.IgnoreLayerCollision(17,16,true);
+		Physics2D.IgnoreLayerCollision (17, 17, true);
 		caz = GameObject.Find ("Caz");
 		werd = GameObject.Find ("Werd");
 		pos = transform.position;

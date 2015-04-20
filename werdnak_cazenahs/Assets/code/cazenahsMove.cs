@@ -3,6 +3,7 @@ using System.Collections;
 
 public class cazenahsMove : MonoBehaviour {
 	float speed = .1f;
+	public int cDW = 25;
 	Animator animator;
 	keyBindHandler keyBindScript;
 	public bool lockMove = false;
@@ -33,7 +34,9 @@ public class cazenahsMove : MonoBehaviour {
 			}
 			if(Input.GetKey (KeyCode.O)){
 				dubPowerUp=true;
+				cDW = 15;
 			}
+
 			//GetComponent<Rigidbody2D> ().velocity = new Vector3 (1, 1, 1);
 		}
 		}
@@ -45,7 +48,7 @@ public class cazenahsMove : MonoBehaviour {
 			loc = new Vector3(transform.position.x, transform.position.y-0.1f, transform.position.z);
 			lazer = GameObject.Find("lazer_blue");
 			Instantiate(lazer, loc , quat);
-			coolDownWait = 30;
+			coolDownWait = cDW;
 		}if (coolDownWait > 0) {
 			coolDownWait--;
 		}
