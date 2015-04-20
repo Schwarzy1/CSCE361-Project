@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class heartsHandler : MonoBehaviour {
-
+	public int konami = 0;
+	bool godmode = false;
 	public int health = 6;
 	Animator animator;
 	// Use this for initialization
@@ -12,19 +13,41 @@ public class heartsHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.X)){
-			TakeDamage(1);
+		if((konami == 0 || konami == 1) && (Input.GetKeyDown(KeyCode.UpArrow))){
+			konami++;
+		}else if((konami == 2 || konami == 3) && (Input.GetKeyDown(KeyCode.DownArrow))){
+			konami++;
+		}else if((konami == 4 || konami == 6) && (Input.GetKeyDown(KeyCode.LeftArrow))){
+			konami++;
+		}else if((konami == 5 || konami == 7) && (Input.GetKeyDown( KeyCode.RightArrow))){
+			konami++;
+		}else if((konami == 8) && (Input.GetKeyDown( KeyCode.B))){
+			konami++;
+		}else if((konami == 9) && (Input.GetKeyDown( KeyCode.A))){
+			konami++;
+		}else if((konami == 10) && (Input.GetKeyDown( KeyCode.Return))){
+			konami = 0;
+			if(godmode == false){
+				godmode = true;
+				animator.SetInteger("health", 6);
+			}else{
+				godmode = false;
+			}
+		}else if(Input.anyKeyDown){
+			konami = 0;
 		}
 	}
 
 	public void TakeDamage(int damage){
-		health -= damage;
+		if(godmode == false){
+			health -= damage;
 
-		if(health <= 0){
-			health = 0;
-			Application.LoadLevel ("GameOver");
+			if(health <= 0){
+				health = 0;
+				Application.LoadLevel ("GameOver");
+			}
+			animator.SetInteger("health", health);
 		}
-		animator.SetInteger("health", health);
 	}
 
 }
