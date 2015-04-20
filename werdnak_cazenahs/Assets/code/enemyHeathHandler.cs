@@ -29,6 +29,12 @@ public class enemyHeathHandler : MonoBehaviour {
 
 				Application.LoadLevel("LevelOneComplete");
 			}
+			if(isBoss && this.name=="superArcheryRobot"){
+				Application.LoadLevel("LevelThreeComplete");
+			}
+			if(isBoss && this.name=="superMeleeRobot"){
+				Application.LoadLevel ("LevelTwoComplete");
+			}
 		}
 	}
 
