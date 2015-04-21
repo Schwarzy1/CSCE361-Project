@@ -5,10 +5,18 @@ public class heartsHandler : MonoBehaviour {
 	public int konami = 0;
 	bool godmode = false;
 	public int health = 6;
+
+
+	SpriteRenderer sprite;
+	GameObject[] players;
 	Animator animator;
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
+
+		players = GameObject.FindGameObjectsWithTag ("Players");
+
+
 	}
 	
 	// Update is called once per frame
@@ -30,8 +38,15 @@ public class heartsHandler : MonoBehaviour {
 			if(godmode == false){
 				godmode = true;
 				animator.SetInteger("health", 6);
+				health = 6;
+				for(int i = 0; i < 16; i++){
+					players[i].GetComponent<SpriteRenderer>().material.color = new Color(1, 0.92f, 0.016f, 1);
+				}
 			}else{
 				godmode = false;
+				for(int i = 0; i < 16; i++){
+					players[i].GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, 1);
+				}
 			}
 		}else if(Input.anyKeyDown){
 			konami = 0;
