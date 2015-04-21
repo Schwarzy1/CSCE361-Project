@@ -39,7 +39,7 @@ public class heartsHandler : MonoBehaviour {
 				godmode = true;
 				animator.SetInteger("health", 6);
 				health = 6;
-				for(int i = 0; i < 16; i++){
+				for(int i = 0; i < 15; i++){
 					players[i].GetComponent<SpriteRenderer>().material.color = new Color(1, 0.92f, 0.016f, 1);
 				}
 			}else{
