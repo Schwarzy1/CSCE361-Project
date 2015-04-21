@@ -21,6 +21,8 @@ public class superBlobMove : MonoBehaviour {
 	GameObject werd;
 	GameObject room;
 	Animator animator;
+	public bool hasDoor=false;
+	public doorHandler doorhand;
 	// Use this for initialization
 	public void Start () {
 		animator = GetComponent<Animator>();
@@ -31,6 +33,12 @@ public class superBlobMove : MonoBehaviour {
 		room = GameObject.Find (roomNum);
 		roomX = room.transform.position.x;
 		roomY = room.transform.position.y;
+	}
+
+	public void OnDestroy(){
+		if (hasDoor) {
+			doorhand.OpenDoor ();	
+		}
 	}
 	
 	// Update is called once per frame
