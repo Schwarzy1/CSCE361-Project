@@ -21,6 +21,9 @@ public class spikeblockMove : MonoBehaviour {
 			if (i < -1 * distance) {
 				a = 1;
 			}
+			if(distance == 0){
+				a = 0;
+			}
 			if (direction == true) {
 				transform.Translate (0, a * speed, 0);
 			}
