@@ -4,6 +4,7 @@ using System.Collections;
 public class lazerMove : MonoBehaviour {
 
 	float direction;
+	Vector3 startPos;
 	GameObject caz;
 	float distance;
 	// Use this for initialization
@@ -17,6 +18,7 @@ public class lazerMove : MonoBehaviour {
 		Physics2D.IgnoreLayerCollision(13,14,true);
 		Physics2D.IgnoreLayerCollision(13,15,true);
 		Physics2D.IgnoreLayerCollision (13, 18, true);
+		startPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 		caz = GameObject.Find ("Caz");
 		direction = caz.GetComponent<cazenahsMove> ().transform.localScale.x;
 		 if (caz.GetComponent<cazenahsMove> ().dubPowerUp == true) {
@@ -36,7 +38,7 @@ public class lazerMove : MonoBehaviour {
 			} else if (direction == 1f) {
 				transform.Translate (0.1f, 0, 0);
 			} 
-			if (Vector3.Distance (transform.position, caz.transform.position) >= distance && Vector3.Distance (transform.position, caz.transform.position) < 20) {
+			if (Vector3.Distance (transform.position, startPos) >= distance && Vector3.Distance (transform.position, caz.transform.position) < 20) {
 				Destroy (gameObject);
 			}
 		}
