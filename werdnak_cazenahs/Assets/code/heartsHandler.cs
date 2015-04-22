@@ -5,17 +5,16 @@ public class heartsHandler : MonoBehaviour {
 	public int konami = 0;
 	bool godmode = false;
 	public int health = 6;
-
-
 	SpriteRenderer sprite;
 	GameObject[] players;
+	GameObject goldHearts;
 	Animator animator;
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
 
 		players = GameObject.FindGameObjectsWithTag ("Players");
-
+		goldHearts = GameObject.Find ("goldHearts");
 
 	}
 	
@@ -42,11 +41,13 @@ public class heartsHandler : MonoBehaviour {
 				for(int i = 0; i < 15; i++){
 					players[i].GetComponent<SpriteRenderer>().material.color = new Color(1, 0.92f, 0.016f, 1);
 				}
+				goldHearts.transform.position = new Vector3 (-4.35f,-3.25f,-2);
 			}else{
 				godmode = false;
 				for(int i = 0; i < 16; i++){
 					players[i].GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, 1);
 				}
+				goldHearts.transform.position = new Vector3 (-1000,-1000,-1);
 			}
 		}else if(Input.anyKeyDown){
 			konami = 0;
