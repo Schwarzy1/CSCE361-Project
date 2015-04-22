@@ -44,7 +44,7 @@ public class heartsHandler : MonoBehaviour {
 				goldHearts.transform.position = new Vector3 (-4.35f,-3.25f,-2);
 			}else{
 				godmode = false;
-				for(int i = 0; i < 16; i++){
+				for(int i = 0; i < 15; i++){
 					players[i].GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, 1);
 				}
 				goldHearts.transform.position = new Vector3 (-1000,-1000,-1);
